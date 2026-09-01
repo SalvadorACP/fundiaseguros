@@ -1,11 +1,69 @@
+// app/layout.tsx
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Fraunces } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
-const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
-const fraunces = Fraunces({ variable: "--font-fraunces", subsets: ["latin"], display: "swap" });
+export const metadata: Metadata = {
+  metadataBase: new URL("https://www.fundiaseguros.com"),
+  
+  title: {
+    default: "Fundia Seguros | Protege lo que más importa",
+    template: "%s | Fundia Seguros",
+  },
+  
+  description: "En Fundia Seguros te ayudamos a proteger tu patrimonio con los mejores seguros de vida, auto y gastos médicos.",
+  
+  keywords: ["seguros", "Fundia Seguros", "seguro de vida", "seguro de auto", "seguro de gastos médicos", "GNP", "Qualitas", "protección", "patrimonio"],
+  
+  authors: [{ name: "Fundia Seguros" }],
+  
+  publisher: "Fundia Seguros",
+  
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  
+  openGraph: {
+    type: "website",
+    locale: "es_MX",
+    url: "https://www.fundiaseguros.com",
+    siteName: "Fundia Seguros",
+    title: "Fundia Seguros | Protege lo que más importa",
+    description: "En Fundia Seguros te ayudamos a proteger tu patrimonio con los mejores seguros de vida, auto y gastos médicos.",
+    images: [
+      {
+        url: "/images/branding/Fundia_original.png",
+        width: 1200,
+        height: 630,
+        alt: "Fundia Seguros - Protege lo que más importa",
+      },
+    ],
+  },
+  verification: {
+    google: "TU_CODIGO_DE_VERIFICACION",
+  },
+  
+  alternates: {
+    canonical: "https://www.fundiaseguros.com",
+  },
+  
+  category: "Seguros",
+};
 
-export const metadata: Metadata = { title: "Fundia Seguros | Muy pronto", description: "Estamos trabajando en una nueva experiencia digital para acompañarte a proteger lo que más importa." };
-
-export default function RootLayout({ children }: LayoutProps<"/">) { return <html lang="es" className={`${geistSans.variable} ${geistMono.variable} ${fraunces.variable} h-full antialiased bg-background`}><body className="min-h-full">{children}</body></html>; }
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="es">
+      <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+      </head>
+      <body>{children}</body>
+    </html>
+  );
+}
