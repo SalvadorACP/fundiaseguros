@@ -6,8 +6,10 @@ export const siteConfig = {
 
   contact: {
     phone: "6693252858",
+    phoneDisplay: "669 325 2858",
     email: "gilbertoayala@fundiaseguros.com",
-    whatsapp: "https://wa.me/526693252858",
+    whatsapp:
+      "https://wa.me/526693252858?text=Hola%20Fundia%20Seguros%2C%20me%20gustar%C3%ADa%20recibir%20asesor%C3%ADa%20para%20encontrar%20un%20seguro.",
   },
 
   location: {
