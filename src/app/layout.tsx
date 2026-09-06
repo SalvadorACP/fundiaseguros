@@ -1,6 +1,23 @@
 // app/layout.tsx
 import type { Metadata } from "next";
+import localFont from "next/font/local";
 import "./globals.css";
+
+const manrope = localFont({
+  src: "../../public/fonts/Manrope-VariableFont_wght.ttf",
+  variable: "--font-manrope",
+  display: "swap",
+});
+
+const sora = localFont({
+  src: [
+    { path: "../../public/fonts/Sora-Regular.ttf", weight: "400" },
+    { path: "../../public/fonts/Sora-SemiBold.ttf", weight: "600" },
+    { path: "../../public/fonts/Sora-Bold.ttf", weight: "700" },
+  ],
+  variable: "--font-sora",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fundiaseguros.com"),
@@ -10,7 +27,7 @@ export const metadata: Metadata = {
     template: "%s | Fundia Seguros",
   },
   
-  description: "En Fundia Seguros te ayudamos a proteger tu patrimonio con los mejores seguros de vida, auto y gastos médicos.",
+  description: "Asesoría personalizada en seguros de auto, vida, gastos médicos y protección empresarial en Mazatlán, Sinaloa.",
   
   keywords: ["seguros", "Fundia Seguros", "seguro de vida", "seguro de auto", "seguro de gastos médicos", "GNP", "Qualitas", "protección", "patrimonio"],
   
@@ -36,7 +53,7 @@ export const metadata: Metadata = {
     url: "https://www.fundiaseguros.com",
     siteName: "Fundia Seguros",
     title: "Fundia Seguros | Protege lo que más importa",
-    description: "En Fundia Seguros te ayudamos a proteger tu patrimonio con los mejores seguros de vida, auto y gastos médicos.",
+    description: "Asesoría personalizada en seguros de auto, vida, gastos médicos y protección empresarial en Mazatlán, Sinaloa.",
     images: [
       {
         url: "/images/branding/Fundia_original.png",
@@ -46,10 +63,6 @@ export const metadata: Metadata = {
       },
     ],
   },
-  verification: {
-    google: "TU_CODIGO_DE_VERIFICACION",
-  },
-  
   alternates: {
     canonical: "https://www.fundiaseguros.com",
   },
@@ -63,7 +76,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
-      <body>{children}</body>
+      <body className={`${manrope.variable} ${sora.variable}`}>{children}</body>
     </html>
   );
 }

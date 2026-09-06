@@ -1,19 +1,32 @@
-import Image from "next/image";
 import { siteConfig } from "@/config/site";
+import { ArrowRight, BadgeCheck } from "lucide-react";
 
 export function Hero() {
   return (
-    <section id="inicio" className="relative overflow-hidden px-6 pb-20 pt-12 sm:px-10 sm:pb-28 sm:pt-20 lg:px-16">
-      <div className="mx-auto flex max-w-7xl flex-col gap-12 lg:flex-row lg:items-end lg:justify-between">
-        <div className="max-w-3xl">
-          <p className="mb-7 text-xs font-semibold uppercase tracking-[0.25em] text-primary">FUNDIA SEGUROS</p>
-          <h1 className="max-w-3xl text-balance font-serif text-5xl leading-[0.98] tracking-[-0.045em] text-primary sm:text-7xl lg:text-[6.5rem]">Estamos construyendo algo <em className="font-normal text-accent">nuevo.</em></h1>
+    <section id="inicio" className="relative overflow-hidden px-6 pb-20 pt-16 sm:px-10 sm:pb-24 sm:pt-24 lg:px-16">
+      <div className="hero-glow" aria-hidden="true" />
+      <div className="relative mx-auto grid max-w-7xl gap-14 lg:grid-cols-[1.25fr_0.75fr] lg:items-end">
+        <div className="max-w-4xl">
+          <p className="eyebrow mb-6">ASESORÍA EN SEGUROS · MAZATLÁN</p>
+          <h1 className="text-balance font-display text-5xl font-semibold leading-[1.02] tracking-[-0.05em] text-primary sm:text-7xl lg:text-[5.6rem]">
+            Protege lo que importa, <span className="text-accent-strong">con claridad.</span>
+          </h1>
+          <p className="mt-7 max-w-2xl text-pretty text-lg leading-8 text-muted-foreground sm:text-xl">
+            Te acompañamos a encontrar una protección adecuada para tu auto, tu salud, tu familia o tu empresa.
+          </p>
+          <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+            <a href={siteConfig.contact.whatsapp} target="_blank" rel="noopener noreferrer" className="button-primary">
+              Recibe asesoría por WhatsApp <ArrowRight className="size-4" />
+            </a>
+            <a href="#seguros" className="button-secondary">Conoce los seguros</a>
+          </div>
         </div>
-        <p className="max-w-xs text-pretty text-base leading-7 text-muted-foreground lg:pb-2">Una nueva experiencia digital para acompañarte a proteger lo que más importa.</p>
+        <aside className="rounded-2xl border border-primary/10 bg-white/70 p-7 shadow-[0_24px_70px_-45px_rgba(24,43,53,0.45)] sm:p-8">
+          <BadgeCheck className="mb-7 size-9 text-accent-strong" aria-hidden="true" />
+          <p className="font-display text-2xl font-semibold leading-snug text-primary">Primero entendemos qué necesitas.</p>
+          <p className="mt-4 leading-7 text-muted-foreground">Después te orientamos para que tomes una decisión informada, sin complicaciones.</p>
+        </aside>
       </div>
-      <div className="mx-auto mt-16 max-w-7xl border-y border-primary/15 py-5 sm:mt-24">
-        <div className="flex items-center gap-4 text-sm text-primary"><span className="size-2 rounded-full bg-accent" aria-hidden="true" />Próximamente en línea</div>
-      </div>
-      </section>
+    </section>
   );
 }
