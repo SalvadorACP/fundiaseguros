@@ -12,7 +12,7 @@ export function Hero() {
             Protege lo que importa, <span className="text-accent-strong">con claridad.</span>
           </h1>
           <p className="mt-7 max-w-2xl text-pretty text-lg leading-8 text-muted-foreground sm:text-xl">
-            Te acompañamos a encontrar una protección adecuada para tu auto, tu salud, tu familia o tu empresa.
+            Te acompañamos a encontrar una protección adecuada para tu auto, tu salud o tu familia.
           </p>
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
             <a href={siteConfig.contact.whatsapp} target="_blank" rel="noopener noreferrer" className="button-primary">
