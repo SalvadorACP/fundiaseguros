@@ -56,3 +56,15 @@ a { outline-offset: 4px; }
   background: var(--accent);
   color: var(--primary);
 }
+
+.quote-panel { display: grid; gap: 1.5rem; background: white; border: 1px solid #182b351a; border-radius: 1.25rem; padding: clamp(1.25rem, 4vw, 2.5rem); }
+.quote-panel[hidden] { display: none; }
+.quote-field { display: grid; gap: .6rem; font-weight: 600; line-height: 1.6; min-width: 0; }
+.quote-field input, .quote-field select, .quote-field textarea { width: 100%; min-width: 0; border: 1px solid #182b3540; border-radius: .65rem; padding: .8rem; font: inherit; font-size: 1rem; font-weight: 400; background: #fff; }
+.quote-field select { text-overflow: ellipsis; }
+.quote-field input:disabled { background: #eee; }
+.quote-field :focus-visible { outline: 2px solid var(--accent-strong); outline-offset: 3px; }
+.quote-heading { font-family: var(--font-sora), sans-serif; font-size: 1.4rem; font-weight: 600; }
+.quote-notice { padding: 1rem; border-radius: .75rem; background: #e5c02820; font-size: .9rem; line-height: 1.7; }
+.quote-person { display: grid; gap: 1rem; border: 1px solid #182b3520; padding: 1rem; border-radius: .75rem; }
+.quote-person legend { padding: 0 .4rem; font-weight: 700; }
