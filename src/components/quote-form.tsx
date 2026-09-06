@@ -1,6 +1,8 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
+import { CarFront, HeartPulse, ShieldCheck, ArrowLeft } from "lucide-react";
 import { useRef, useState, type FormEvent } from "react";
 import { siteConfig } from "@/config/site";
 
@@ -24,6 +26,7 @@ function Select({ label, options, value, onChange }: { label: string; options: s
 }
 
 export function QuoteForm({ product }: { product: Product }) {
+  const ProductIcon = product === "auto" ? CarFront : product === "vida" ? ShieldCheck : HeartPulse;
   const [situation, setSituation] = useState("");
   const [origin, setOrigin] = useState("");
   const [year, setYear] = useState("");
@@ -54,10 +57,26 @@ export function QuoteForm({ product }: { product: Product }) {
     requestAnimationFrame(() => summaryRef.current?.focus());
   }
 
-  return <main className="min-h-screen px-5 py-10 sm:px-10">
-    <div className="mx-auto max-w-3xl">
-      <Link href="/#seguros" className="font-semibold underline underline-offset-4">← Volver a los seguros</Link>
-      <p className="eyebrow mt-10">FUNDIA SEGUROS · COTIZACIÓN PERSONALIZADA</p>
+  return <div className="quote-page">
+    <header className="quote-brand-header">
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4">
+        <Link href="/" aria-label="Fundia Seguros, inicio"><Image src="/images/branding/Fundia_original.png" width={160} height={64} priority className="h-auto w-32 sm:w-40" alt="Fundia Seguros" /></Link>
+        <Link href="/#seguros" className="inline-flex items-center gap-2 text-sm font-semibold"><ArrowLeft size={16} aria-hidden="true" />Volver a los seguros</Link>
+      </div>
+    </header>
+    <main className="quote-layout">
+    <aside className="quote-brand-card">
+      <div className="quote-product-icon"><ProductIcon size={30} aria-hidden="true" /></div>
+      <p className="quote-brand-eyebrow">CONTIGO EN CADA PASO</p>
+      <h2>Protege lo que importa, <span>con claridad.</span></h2>
+      <p>Una conversación cercana para encontrar la protección que necesitas.</p>
+      <div className="quote-brand-divider" />
+      <p className="quote-brand-eyebrow">TU SOLICITUD</p>
+      <ol className="quote-journey"><li aria-current={!message ? "step" : undefined}><span>01</span>Cuéntanos sobre ti</li><li aria-current={message ? "step" : undefined}><span>02</span>Revisa tus respuestas</li><li><span>03</span>Conversemos por WhatsApp</li></ol>
+      <a className="quote-help" href={`tel:+52${siteConfig.contact.phone}`}>¿Necesitas ayuda?<strong>{siteConfig.contact.phoneDisplay}</strong></a>
+    </aside>
+    <div className="quote-content">
+      <p className="eyebrow">COTIZACIÓN PERSONALIZADA</p>
       <h1 className="section-heading mt-4">{titles[product]}</h1>
       <p className="mt-6 leading-7 text-muted-foreground">{product === "vida" ? <>Para proporcionarte una <strong>asesoría personalizada</strong> ayúdanos a conocerte un poco más.</> : product === "auto" ? "Recibe una cotización y asesoría personalizada. Todos los datos solicitados son necesarios para su cotización en distintas aseguradoras; si omite alguno no podremos cotizarle." : "Recibe atención de calidad en hospitales privados por accidente o enfermedad. La protección está sujeta a las coberturas y condiciones de la póliza."}</p>
       <p className="mt-3 text-sm leading-6">Trataremos tus datos conforme a nuestro aviso de privacidad. Para consultarlo da <Link href="/aviso-de-privacidad" target="_blank" className="font-bold underline">clic aquí</Link>.</p>
@@ -103,5 +122,7 @@ export function QuoteForm({ product }: { product: Product }) {
       </form>
       {message && <section className="quote-panel mt-8"><h2 tabIndex={-1} ref={summaryRef} className="quote-heading">Revisa tu solicitud</h2><pre className="whitespace-pre-wrap break-words font-sans text-sm leading-7">{message}</pre><p className="text-sm leading-6">Se abrirá WhatsApp con este mensaje. Revisa la conversación y pulsa Enviar para hacerlo llegar a Fundia.</p>{whatsapp(message).length <= 7500 ? <a className="button-primary" href={whatsapp(message)} target="_blank" rel="noopener noreferrer">Solicitar cotización por WhatsApp</a> : <><p>Por su extensión, copia la solicitud y pégala en WhatsApp.</p><button className="button-secondary" type="button" onClick={async () => { try { await navigator.clipboard.writeText(message); setCopied(true); } catch { setCopied(false); } }}>Copiar solicitud</button><p role="status">{copied ? "Solicitud copiada." : "También puedes seleccionar y copiar el resumen manualmente."}</p><a className="button-primary" href={siteConfig.contact.whatsapp.split("?")[0]} target="_blank" rel="noopener noreferrer">Abrir WhatsApp</a></>}<button type="button" className="button-secondary" onClick={() => { setMessage(""); requestAnimationFrame(() => formRef.current?.querySelector<HTMLInputElement | HTMLSelectElement>("input, select")?.focus()); }}>Editar respuestas</button></section>}
     </div>
-  </main>;
+    </main>
+    <footer className="quote-brand-footer"><span>© {new Date().getFullYear()} Fundia Seguros · Mazatlán, Sinaloa</span><Link href="/aviso-de-privacidad">Aviso de privacidad</Link></footer>
+  </div>;
 }

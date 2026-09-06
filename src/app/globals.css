@@ -68,3 +68,38 @@ a { outline-offset: 4px; }
 .quote-notice { padding: 1rem; border-radius: .75rem; background: #e5c02820; font-size: .9rem; line-height: 1.7; }
 .quote-person { display: grid; gap: 1rem; border: 1px solid #182b3520; padding: 1rem; border-radius: .75rem; }
 .quote-person legend { padding: 0 .4rem; font-weight: 700; }
+
+.quote-page { min-height: 100vh; background: var(--background); }
+.quote-brand-header { padding: 1.1rem clamp(1.25rem, 4vw, 4rem); border-bottom: 1px solid #182b351a; background: #f5f7f2f5; }
+.quote-layout { display: grid; grid-template-columns: minmax(260px, .7fr) minmax(0, 1.3fr); gap: clamp(2rem, 5vw, 5rem); max-width: 1280px; margin: auto; padding: 3.5rem 2rem 5rem; align-items: start; }
+.quote-brand-card { position: sticky; top: 2rem; padding: clamp(1.5rem, 3vw, 2.5rem); border-radius: 1.5rem; color: var(--primary-foreground); background: var(--primary); }
+.quote-product-icon { display: grid; place-items: center; width: 4rem; height: 4rem; border: 1px solid #e5c02866; color: var(--accent); border-radius: 1rem; margin-bottom: 2.5rem; }
+.quote-brand-eyebrow { font-size: .75rem; font-weight: 700; letter-spacing: .16em; color: var(--accent); }
+.quote-brand-card h2 { margin: 1rem 0 1.5rem; font-family: var(--font-sora), sans-serif; font-size: clamp(1.9rem, 3vw, 2.65rem); line-height: 1.15; letter-spacing: -.04em; font-weight: 600; }
+.quote-brand-card h2 span { color: var(--accent); }
+.quote-brand-card > p:not(.quote-brand-eyebrow) { color: #f5f7f2ba; line-height: 1.8; }
+.quote-brand-divider { height: 1px; background: #ffffff26; margin: 2rem 0; }
+.quote-journey { display: grid; gap: 1.1rem; margin: 1.5rem 0 2.5rem; list-style: none; font-size: .9rem; color: #f5f7f2b3; }
+.quote-journey li { display: flex; gap: .8rem; align-items: center; }
+.quote-journey li span { display: grid; place-items: center; width: 2rem; height: 2rem; border: 1px solid #ffffff40; border-radius: 50%; font-size: .75rem; flex-shrink: 0; }
+.quote-journey li[aria-current] { color: white; }
+.quote-journey li[aria-current] span { color: var(--primary); background: var(--accent); border-color: var(--accent); }
+.quote-help { display: grid; gap: .35rem; font-size: .85rem; color: #f5f7f2b3; }
+.quote-help strong { font-size: 1.15rem; color: white; }
+.quote-content { min-width: 0; }
+.quote-content > .section-heading { font-size: clamp(2rem, 3.3vw, 3rem); }
+.quote-content .quote-panel { border-top: 4px solid var(--accent); box-shadow: 0 20px 60px -40px #182b3550; }
+.quote-field input, .quote-field select, .quote-field textarea { background: #f5f7f280; transition: border-color .15s, box-shadow .15s; }
+.quote-field input:hover, .quote-field select:hover, .quote-field textarea:hover { border-color: var(--accent-strong); }
+.quote-panel input[type=radio], .quote-panel input[type=checkbox] { accent-color: var(--primary); }
+.quote-panel label:has(input[type=radio]:checked) { border-color: var(--accent-strong); background: #e5c02815; box-shadow: inset 3px 0 var(--accent); }
+.quote-brand-footer { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; max-width: 1280px; margin: auto; padding: 1.5rem 2rem; border-top: 1px solid #182b351a; font-size: .8rem; color: var(--muted-foreground); }
+.quote-brand-footer a { text-decoration: underline; text-underline-offset: 4px; }
+@media (max-width: 900px) {
+  .quote-layout { grid-template-columns: 1fr; padding: 1.5rem 1.25rem 3rem; gap: 2rem; }
+  .quote-brand-card { position: static; padding: 1.5rem; }
+  .quote-product-icon { width: 3rem; height: 3rem; margin-bottom: 1rem; }
+  .quote-brand-card h2 { font-size: 1.9rem; max-width: 28rem; margin-bottom: .75rem; }
+  .quote-brand-card .quote-brand-divider, .quote-brand-card .quote-journey, .quote-brand-card .quote-help, .quote-brand-card .quote-brand-divider + p { display: none; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .quote-page * { transition: none; } }
