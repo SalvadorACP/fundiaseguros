@@ -7,12 +7,12 @@ export function Hero() {
       <div className="hero-glow" aria-hidden="true" />
       <div className="relative mx-auto grid max-w-7xl gap-14 lg:grid-cols-[1.25fr_0.75fr] lg:items-end">
         <div className="max-w-4xl">
-          <p className="eyebrow mb-6">ASESORÍA EN SEGUROS · MAZATLÁN</p>
+          <p className="eyebrow mb-6">ASESORÍA EN SEGUROS</p>
           <h1 className="text-balance font-display text-5xl font-semibold leading-[1.02] tracking-[-0.05em] text-primary sm:text-7xl lg:text-[5.6rem]">
             Protege lo que importa, <span className="text-accent-strong">con claridad.</span>
           </h1>
           <p className="mt-7 max-w-2xl text-pretty text-lg leading-8 text-muted-foreground sm:text-xl">
-            Te acompañamos a encontrar una protección adecuada para tu auto, tu salud, tu familia o tu empresa.
+            Te acompañamos a encontrar una protección adecuada para tu auto, tu salud o tu familia.
           </p>
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
             <a href={siteConfig.contact.whatsapp} target="_blank" rel="noopener noreferrer" className="button-primary">
