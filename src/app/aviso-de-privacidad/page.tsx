@@ -19,7 +19,7 @@ export default function PrivacyPage() {
           <p>La información se utilizará para responder a tu solicitud, dar seguimiento a la atención y presentarte alternativas relacionadas con el servicio que hayas consultado.</p>
           <h2>Tus derechos</h2>
           <p>Puedes solicitar información, corrección o eliminación de tus datos, así como manifestar que no deseas recibir seguimiento, escribiendo a <a href={`mailto:${siteConfig.contact.email}`}>{siteConfig.contact.email}</a>.</p>
-          <p className="rounded-xl border border-accent/50 bg-accent/10 p-5 text-sm"><strong>Nota:</strong> este aviso describe el alcance actual del sitio y sus canales de contacto. Debe revisarse con asesoría legal antes de habilitar formularios o recopilar documentación sensible en línea.</p>
+          
         </div>
       </article>
     </main>
