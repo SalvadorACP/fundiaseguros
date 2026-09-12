@@ -14,7 +14,7 @@ export function Header() {
         <Link href="/#nosotros" className="nav-link">Cómo te ayudamos</Link>
         <Link href="/nosotros" className="nav-link">Nosotros</Link>
         <Link href="/#blog" className="nav-link">Blog</Link>
-        <Link href="/#ubicacion" className="nav-link">Ubicación</Link>
+        <Link href="/#ubicacion" className="nav-link">Contacto</Link>
       </nav>
       <a href={siteConfig.contact.whatsapp} target="_blank" rel="noopener noreferrer" className="button-primary px-4 py-2.5 text-sm sm:px-5">Cotiza ahora</a>
       </div>

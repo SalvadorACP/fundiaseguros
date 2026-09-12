@@ -17,8 +17,6 @@ export type Article = {
   sources?: { title: string; href: string }[];
 };
 
-// Adaptado de “Fundia Seguros - Blogs”. Las cifras y promesas sin respaldo
-// se sustituyen por explicaciones sujetas a las condiciones del producto.
 export const articles: Article[] = [
   {
     slug: "cuanto-cuesta-seguro-gastos-medicos-mayores-mexico",

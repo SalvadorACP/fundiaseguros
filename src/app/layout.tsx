@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.fundiaseguros.com"),
   
   title: {
-    default: "Fundia Seguros | Protege lo que más importa",
+    default: "Fundia Seguros | Tranquilidad a un click de distancia",
     template: "%s | Fundia Seguros",
   },
   
@@ -52,14 +52,14 @@ export const metadata: Metadata = {
     locale: "es_MX",
     url: "https://www.fundiaseguros.com",
     siteName: "Fundia Seguros",
-    title: "Fundia Seguros | Protege lo que más importa",
+    title: "Fundia Seguros | Tranquilidad a un click de distancia",
     description: "Asesoría personalizada en seguros de auto, vida, gastos médicos y protección empresarial en Mazatlán, Sinaloa.",
     images: [
       {
         url: "/images/branding/Fundia_original.png",
         width: 1200,
         height: 630,
-        alt: "Fundia Seguros - Protege lo que más importa",
+        alt: "Fundia Seguros - Tranquilidad a un click de distancia",
       },
     ],
   },
