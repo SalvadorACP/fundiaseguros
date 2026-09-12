@@ -6,6 +6,7 @@ import { Location } from "@/components/sections/location";
 import { Services } from "@/components/sections/services";
 import { WhyFundia } from "@/components/sections/why-fundia";
 import { WhatsAppButton } from "@/components/whatsapp-button";
+import { BlogCarousel } from "@/components/sections/blog-carousel";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
         <Hero />
         <Services />
         <WhyFundia />
+        <BlogCarousel />
         <Location />
         <Contact />
       </main>
