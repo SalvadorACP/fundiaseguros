@@ -1,5 +1,6 @@
 import { siteConfig } from "@/config/site";
-import { ArrowRight, BadgeCheck } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import { TeamPreview } from "@/components/sections/team-preview";
 
 export function Hero() {
   return (
@@ -21,11 +22,7 @@ export function Hero() {
             <a href="#seguros" className="button-secondary">Conoce los seguros</a>
           </div>
         </div>
-        <aside className="rounded-2xl border border-primary/10 bg-white/70 p-7 shadow-[0_24px_70px_-45px_rgba(24,43,53,0.45)] sm:p-8">
-          <BadgeCheck className="mb-7 size-9 text-accent-strong" aria-hidden="true" />
-          <p className="font-display text-2xl font-semibold leading-snug text-primary">Primero entendemos qué necesitas.</p>
-          <p className="mt-4 leading-7 text-muted-foreground">Después te orientamos para que tomes una decisión informada, sin complicaciones.</p>
-        </aside>
+        <TeamPreview />
       </div>
     </section>
   );

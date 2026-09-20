@@ -12,7 +12,7 @@ export function Location() {
   return (
     <section id="ubicacion" className="border-t border-primary/10 px-6 py-20 sm:px-10 sm:py-24 lg:px-16">
       <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-2 lg:gap-12">
-        <div className="min-w-0">
+        <div className="flex min-w-0 flex-col">
           <div>
             <p className="eyebrow">ESTAMOS CERCA</p>
             <h2 className="location-heading mt-4">Visítanos en Mazatlán.</h2>
@@ -21,7 +21,7 @@ export function Location() {
             <p className="leading-7 text-muted-foreground">{siteConfig.location.address}</p>
             <a href={siteConfig.location.mapsUrl} target="_blank" rel="noopener noreferrer" className="mt-3 inline-block font-semibold text-primary underline decoration-accent decoration-2 underline-offset-4">Abrir en Google Maps</a>
           </div>
-        <div className="overflow-hidden rounded-2xl border border-primary/10 shadow-[0_25px_80px_-55px_rgba(24,43,53,0.55)]">
+        <div className="relative min-h-[300px] flex-1 overflow-hidden rounded-2xl border border-primary/10 shadow-[0_25px_80px_-55px_rgba(24,43,53,0.55)]">
           <iframe
             src={siteConfig.location.mapEmbedUrl}
             width="100%"
@@ -30,7 +30,7 @@ export function Location() {
             allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            className="block w-full"
+            className="absolute inset-0 block h-full w-full"
             title="Ubicación de Fundia Seguros"
           />
         </div>
