@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
+import agentGnp from "../../../public/images/aseguradorasAliadas/GNP/Agente GNP logo sin fondo.png";
+import qualitas from "../../../public/images/aseguradorasAliadas/Qualitas/QualitasLogo.png";
 import { ArrowRight, Compass, Handshake, ShieldCheck } from "lucide-react";
 import { Header } from "@/components/sections/header";
 import { Footer } from "@/components/sections/footer";
@@ -156,7 +159,7 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <section className="px-6 py-20 sm:px-10 lg:px-16">
+        <section id="aseguradoras-aliadas" aria-labelledby="allies-heading" className="px-6 py-20 sm:px-10 lg:px-16">
           <div className="mx-auto max-w-7xl">
             <Handshake
               className="mb-6 text-accent-strong"
@@ -167,7 +170,7 @@ export default function AboutPage() {
             <p className="eyebrow">OPCIONES PARA TU PROTECCIÓN</p>
 
             <div className="mt-5 grid gap-8 lg:grid-cols-2">
-              <h2 className="section-heading">
+              <h2 id="allies-heading" className="section-heading">
                 Trabajamos con
                 <br />
                 GNP y Quálitas.
@@ -180,6 +183,14 @@ export default function AboutPage() {
                 coberturas y la emisión de la póliza corresponden a cada
                 aseguradora.
               </p>
+            </div>
+            <div className="mt-10 grid gap-6 sm:grid-cols-2">
+              <div className="ally-logo-card">
+                <Image src={agentGnp} alt="Agente GNP Seguros" sizes="(max-width: 639px) 240px, 320px" className="h-40 w-full max-w-80 object-contain sm:h-48" />
+              </div>
+              <div className="ally-logo-card">
+                <Image src={qualitas} alt="Quálitas Compañía de Seguros" sizes="(max-width: 639px) 240px, 320px" className="h-40 w-full max-w-80 object-contain sm:h-48" />
+              </div>
             </div>
           </div>
         </section>
